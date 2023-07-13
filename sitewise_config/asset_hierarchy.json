@@ -1,0 +1,9 @@
+[
+    {
+        "parent_asset_name": "ParentAssetName",
+        "child_assets": [{
+            "child_asset_name": "ChildAssetName",
+            "logical_id": "ParentChildAssetModelHierarchy"
+        }]
+    }
+]

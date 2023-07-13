@@ -1,0 +1,27 @@
+[
+    {
+        "model_name": "ParentModelName",
+        "asset_name": "ParentAssetName",
+        "asset_description": "Creating a Parent Test SW Asset",
+        "attributes": [{
+            "name": "AttributeName",
+            "value": "parent attribute value"
+        }],
+        "measurements": []
+    },
+    {
+        "model_name": "ChildModelName",
+        "asset_name": "ChildAssetName",
+        "asset_description": "Creating a Parent Test SW Asset",
+        "attributes": [{
+            "name": "AttributeName",
+            "value": "child attribute value"
+        }],
+        "measurements": [{
+            "name": "Temperature (Celsius)",
+            "logical_id": "ModelNameTemperatureMesurement",
+            "alias": "asset/alias",
+            "notification_state": "ENABLED"
+        }]
+    }
+]

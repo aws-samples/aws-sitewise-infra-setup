@@ -1,0 +1,58 @@
+[
+    {
+        "model_name": "ParentModelName",
+        "model_description": "Parent Model Description",
+        "attributes": [{
+            "name": "AttributeName",
+            "data_type": "STRING",
+            "default_value": "DEFAULT"
+        }],
+        "measurements": [],
+        "transforms": [],
+        "metrics": []
+    
+    },
+    {
+        "model_name": "ChildModelName",
+        "model_description": "Child Model Description",
+        "attributes": [{
+            "name": "AttributeName",
+            "data_type": "STRING",
+            "default_value": "DEFAULT"
+        }],
+        "measurements": [{
+            "name": "Temperature (Celsius)",
+            "data_type": "DOUBLE",
+            "unit": "Celsius",
+            "forward_config_state": "ENABLED"
+        }],
+        "transforms": [{
+            "name": "Temperature (Fahrenheit)",
+            "data_type": "DOUBLE",
+            "unit": "Fahrenheit",
+            "expression": "(temperature*1.8)+32",
+            "variables": [{
+                "name": "temperature",
+                "property_logical_id": "Temperature (Celsius)",
+                "hierarchy_logical_id": null
+            }],
+            "forward_config_state": "ENABLED",
+            "compute_location": "EDGE"
+        }],
+        "metrics": [{
+            "name": "Average Temperature (Fahrenheit)",
+            "data_type": "DOUBLE",
+            "unit": "Fahrenheit",
+            "expression": "avg(temperature)",
+            "variables": [{
+                "name": "temperature",
+                "property_logical_id": "Temperature (Fahrenheit)",
+                "hierarchy_logical_id": null
+            }],
+            "interval": "5m",
+            "offset": null,
+            "compute_location": "CLOUD"
+        }]
+    
+    }
+]
